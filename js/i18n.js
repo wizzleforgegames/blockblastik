@@ -308,13 +308,13 @@ en:{
  'hub.to':'to next level','hub.season.open':'Open season','chest.in':'Chest unlocks in',
  'daily.in':'New daily puzzle in',
 }};
-let lang = 'en';
+let lang = 'ru';
 try{
   const p=new URLSearchParams(location.search);
   const pl=(p.get('language')||p.get('lang')||'').toLowerCase();
-  const nav=(navigator.languages&&navigator.languages[0]||navigator.language||'en').toLowerCase();
+  const nav=(navigator.languages&&navigator.languages[0]||navigator.language||'ru').toLowerCase();
   const src=pl||nav;
-  lang = src.startsWith('ru')?'ru':'en';
+  lang = (src.startsWith('en')||src.startsWith('de')||src.startsWith('tr')||src.startsWith('es')||src.startsWith('fr'))?'en':'ru';
 }catch(e){}
 const I18N={
   get lang(){return lang},
